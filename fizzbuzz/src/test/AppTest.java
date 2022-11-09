@@ -64,4 +64,16 @@ public class AppTest {
                 assertTrue("Buzz is not included", fizzbuzz.get(i) == "FizzBuzz");
             }
     }
+    @Test
+    public void check_if_fizz_exist_if_number_3_exists() {
+        //given
+        App app = new App();
+        //when
+        HashMap<Integer,String> fizzbuzz = app.fizzbuzz();
+        //then
+        for (int i=1; i < fizzbuzz.size(); i++)
+            if (String.valueOf(i).contains("3")){
+                assertTrue("Fizz is not included", fizzbuzz.get(i).contains("Fizz"));
+            }
+    }
 }
